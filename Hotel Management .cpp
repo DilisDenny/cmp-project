@@ -108,7 +108,6 @@ void restaurant::write_fmenu()
 				int   baid;
 	   public:
 				void write_bar();
-				void get_bar();
 				void appened1_bar();
 				void bill_bar();
 				void show_bar();
