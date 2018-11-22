@@ -293,7 +293,7 @@ void customer::cust_del()
 	{
 		private:
 				char  room_type[20];
-				int   room_id;
+				char   room_id[5];
 				float roomtotprice;
 				float room_price;
 		public:
@@ -318,7 +318,7 @@ void roomtype::get_roomtype()
 		cin.ignore();
 		cin.getline(room_type,20);
 		cout<<"\n\t\t\t ENTER THE ROOM ID"<<'\t';
-		cin>>room_id;
+		cin.getline(room_id,5);
 		cout<<"\n\t\t\t ENTER THE PRICE:"<<'\t';
 		cin>>room_price;
 	}
@@ -354,6 +354,7 @@ void roomtype::get_roomtype()
 					void room_bill();
 					void room_del();
 					void room_show();
+					void showroom();
 					void show_checkoutdetails();
 					void checkoutroom_del();
 					char*retroomid()
@@ -385,6 +386,8 @@ void roomtype::get_roomtype()
 		char romnum[5];
 		char ans;
 		room r;
+		fstream f4;
+		f4.open("Room status.txt",ios::binary|ios::in);
 		cout<<"\n\t\t\t HAVE YOU BOOKED IN ADVANCE ?(Y/N)::";
 		cin>>ans;
 		if(ans=='n'||ans=='N')
@@ -401,9 +404,14 @@ void roomtype::get_roomtype()
 			if(strcmp(r.retroomid(),romnum))
 				{
 					system("CLS");
-					cout<<"\n\t\t\t YOU ARE CHECKINED";
+					cout<<"\n\t\t\t YOU ARE CHECKINED";	
+					while(f4.read((char*)&r,sizeof(r)))
+						{
+							r.showroom();
+						}	
 					cout<<"\n\t\t\t ...........THANK YOU........... ";
 				}
+		f4.close();
 	}
   void room::checkout()
 	{
@@ -447,6 +455,13 @@ void roomtype::get_roomtype()
 		puts(roomcustaddress);
 		cout<<"\n\t\t\t*********************************************\n";
 	}
+void room::showroom()
+   {
+		cout<<"\n\t\t\t ROOM TYPE:"<<'\t';
+		puts(romtype);
+		cout<<"\n\t\t\t ROOM ID:"<<'\t'<<roomid<<endl;
+		cout<<"\n\t\t\t ROOM PRICE:"<<'\t'<<roomprice<<endl;
+   }
   void room::show_checkoutdetails()
 	{
 		cout<<"\n\t\t\t ROOM ID:";
@@ -492,7 +507,7 @@ void roomtype::get_roomtype()
 				<<"\n\t\t #############################################################################################################################################";
 		}
 //!!!!!!!!!!!!!!!!!!!!FUNCTION TO WRITE INTO THE FILE!!!!!!!!!!!!!!!!!!!
-//********************8**RESTUARANT CLASS*******************************
+//***********************RESTUARANT CLASS*******************************
  void food_menu ()
    {
      system("CLS");
@@ -614,7 +629,7 @@ void modifycutomer()
             if(vari==0)
 				cout<<endl<<"\t\t\t................ RECORD NOT FOUND.............."<<endl;
 	}
-//!!!!!!!!!!!!!!!!!!!!FUCTION TO CANCEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//!!!!!!!!!!!!!!!!!!!!!!FUCTION TO CANCEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //*************************ROOM CANCELLATOIN****************************
 void cancellation()
 	{
