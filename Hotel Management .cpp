@@ -354,7 +354,7 @@ void roomtype::get_roomtype()
 					void room_bill();
 					void room_del();
 					void room_show();
-					void showroom();
+					void check_showroom();
 					void show_checkoutdetails();
 					void checkoutroom_del();
 					char*retroomid()
@@ -397,17 +397,17 @@ void roomtype::get_roomtype()
 				r.write_room();
 			}
 		else
-			cout<<"\n\t\t\t ......BOOKING INFROMATION........";
 			cout<<"\n\t\t\t ENTER THE ROOM NUMBER   :: ";
 			cin.ignore();
 			cin.getline(romnum,5);
 			if(strcmp(r.retroomid(),romnum))
 				{
 					system("CLS");
+					cout<<"\n\t\t\t ......BOOKING INFROMATION........";
 					cout<<"\n\t\t\t YOU ARE CHECKINED";	
 					while(f4.read((char*)&r,sizeof(r)))
 						{
-							r.showroom();
+							r.check_showroom();
 						}	
 					cout<<"\n\t\t\t ...........THANK YOU........... ";
 				}
@@ -455,7 +455,7 @@ void roomtype::get_roomtype()
 		puts(roomcustaddress);
 		cout<<"\n\t\t\t*********************************************\n";
 	}
-void room::showroom()
+void room::check_showroom()
    {
 		cout<<"\n\t\t\t ROOM TYPE:"<<'\t';
 		puts(romtype);
