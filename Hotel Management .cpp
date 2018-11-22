@@ -1,5 +1,5 @@
-//***************** HOTEL MANAGEMENT SYSTEM****************
-//*****************HEADER FILES USED***********************
+//***********************HOTEL MANAGEMENT SYSTEM************************
+//*********************HEADER FILES USED********************************
 #include<iostream>
 #include<conio.h>
 #include<string.h>
@@ -7,7 +7,7 @@
 #include<fstream>
 #include<stdlib.h>
 using namespace std;
-//********************CLASS FOR RESTAURANT*****************
+//************************CLASS FOR RESTAURANT**************************
 class restaurant
   {
      private:
@@ -23,7 +23,7 @@ class restaurant
 			void food_bill();
 			void food_show();
   };
-// FUCTIONS OF RESTAURANT CLASS
+//********************FUCTIONS OF RESTAURANT CLASS**********************
 void restaurant::write_fmenu()
   {
    	cout<<"\n\t\t\t ENTER FOOD NAME:"<<endl<<"\t\t\t";
@@ -97,7 +97,7 @@ void restaurant::write_fmenu()
 		cout<<endl;
 		cout<<"\t\t\t**********************************\n";
     }
-//*********************CLASS FOR BAR **********************
+//***************************CLASS FOR BAR******************************
  class bar
    {
 	   private:
@@ -113,7 +113,7 @@ void restaurant::write_fmenu()
 				void show_bar();
 				void bar_del();
 	};
-//FUNCTIONS OF BAR CLASS
+//***********************FUNCTIONS OF BAR CLASS*************************
  void bar::write_bar()
   {
         cout<<"\t\t\t ENTER ITEAM NAME(BAR):"<<endl<<"\t\t\t";
@@ -189,7 +189,7 @@ void restaurant::write_fmenu()
 		f2.close();
 		cout<<"\n\t\t\t ......RECORD DELETED......\n"<<endl;
 	}
-//*****************CLASS FOR CUSTOMERS******************
+//*************************CLASS FOR CUSTOMERS**************************
  class customer
 	{
 	    	private:
@@ -210,7 +210,7 @@ void restaurant::write_fmenu()
 						return cust_name;
 					}
 	};
-// FUNCTIONS OF CUSTOMER CLASS
+//**********************FUNCTIONS OF CUSTOMER CLASS*********************
 void customer::write_customer()
  {
 	cout<<"\n\t\t\t ENTER CUSTOMER NAME:"<<endl<<"\t\t\t";
@@ -225,9 +225,9 @@ void customer::write_customer()
 	cout<<"\n\t\t\t ENTER CUSTOMER CHECK_OUT DATE:"<<endl<<"\t\t\t";
 	cin.getline(cust_checkoutdate,10);
 	cout<<"\n\t\t\t......RECORDE CREATED......";
- }
+  }
  void customer::appened3_customer()
-		{
+	{
    		    customer c;
 			fstream f3;
 			f3.open("Customer.txt",ios::app|ios::binary);
@@ -245,7 +245,7 @@ void customer::write_customer()
 			f3.write((char*)&c,sizeof(c));
 			f3.close();
 			cout<<"\n\t\t\t......RECORDE CREATED......";
-		}	
+	}	
   void customer::modify_cutomer()
 	{
         cout<<"\n\t\t\t CUSTOMER NAME(to modify):";
@@ -261,7 +261,7 @@ void customer::write_customer()
 		cin.getline(cust_checkoutdate,10);
 	}
   void customer::showdetail_cust()
-		{
+	{
 			cout<<"\n\t\t\t CUSTOMER NAME:"<<"\t\t";
 			puts(cust_name);
 			cout<<endl;
@@ -288,7 +288,7 @@ void customer::cust_del()
 		f3.close();
 		cout<<"\n\t\t\t ......RECORD DELETED......\n"<<endl;
 	}	
-//****************************CLASS FOR ROOM TYPE*************************
+//************************CLASS FOR ROOM TYPE***************************
  class roomtype
 	{
 		private:
@@ -301,7 +301,7 @@ void customer::cust_del()
 				void get_roomtype();
 				void show_roomtype();
 	};
-// FUNCTIONS OF ROOM TYPE CLASS
+//*********************FUNCTIONS OF ROOM TYPE CLASS*********************
 void roomtype::view_roomtype()
 	{
 				cout<<"\n\t\t\t\tROOM TYPES  "
@@ -335,7 +335,7 @@ void roomtype::get_roomtype()
 		roomtotprice=num*room_price;
 		cout<<"\n\t\t\t TOTAL ROOM PRICE:"<<'\t'<<roomtotprice;
 	}
-//********************** CLASS FOR ROOM******************************
+//*************************CLASS FOR ROOM*******************************
   class room
 	  {
 		  private:
@@ -361,7 +361,7 @@ void roomtype::get_roomtype()
 						return roomid;
 					}
 	  };
-// FUNCTIONS OF ROOM CLASS
+//***********************FUNCTIONS OF ROOM CLASS************************
  void room::write_room()
   {
 		roomtype rm;
@@ -468,7 +468,7 @@ void roomtype::get_roomtype()
 		f5.close();
 		cout<<"\n\t\t\t ......RECORD DELETED......\n"<<endl;
 	}
-//***************PROJECT DETAILS******************
+//**************************PROJECT DETAILS*****************************
 	void projctdetail()
 		{
 			system ("CLS");
@@ -484,15 +484,15 @@ void roomtype::get_roomtype()
 			    <<"\n\t\t\t\t\t\t\t\t\t             CINIL SIR"
 			    <<"\n\t\t #############################################################################################################################################";		
 		}
-//**************CLOSING FUNCTION********************
+//***************************CLOSING FUNCTION***************************
 	void projctclose()
 		{
 			cout<<"\n\n\t\t\t\t\t\t\t\t\t\t\t THANK YOU"
 				<<"\n\t\t\t\t\t\t\t\t\t\t\t VISIT AGAIN"
 				<<"\n\t\t #############################################################################################################################################";
 		}
-//$$$$$$$$$$$FUNCTION TO WRITE INTO THE FILE$$$$$$$$$$$$$$$$$$$$$$$
-//&&&&&&&&&RESTUARANT CLASS&&&&&&&&&&&&&&&&&&
+//!!!!!!!!!!!!!!!!!!!!FUNCTION TO WRITE INTO THE FILE!!!!!!!!!!!!!!!!!!!
+//********************8**RESTUARANT CLASS*******************************
  void food_menu ()
    {
      system("CLS");
@@ -510,7 +510,7 @@ void roomtype::get_roomtype()
 	    }while(option=='Y'||option=='y');
 	 f1.close();
   }
-//%%%%%%%%%%%%%BAR CLASS%%%%%%%%%%%%%%%%%%%%%%%
+//*****************************BAR CLASS********************************
 void get_bar()
    {
   		system("CLS");
@@ -528,7 +528,7 @@ void get_bar()
 		  }while(option2=='Y'||option2=='y');
 		 f2.close();
 	}
-//&&&&&&&&&&&&CUSTOMER CLASS&&&&&&&&&&&&&&&&&&
+//************************CUSTOMER CLASS********************************
 void getcust_detail()
 	{
 			system("CLS");
@@ -546,7 +546,44 @@ void getcust_detail()
 			   }while(option3=='Y'||option3=='y');
 			f3.close();
 	}
-//^^^^^^^^^^CUSTOMER MODIFY^^^^^^^^^^^^^^^^
+//**************************CLASS ROOM(BOOKING)*************************
+ void booking()
+  {
+	system("CLS");
+	room r;
+	char option4;
+	fstream f4;
+	f4.open("Room status.txt",ios::out|ios::binary|ios::app);
+	do
+		{
+			system("CLS");
+			r.write_room();
+			f4.write((char*)&r,sizeof(r));
+			cout<<"\n\t\t\t DO YOU WANT TO ADD MORE ROOMS-(Y/N)"<<endl<<"\t\t\t";
+			cin>>option4;
+		}while(option4=='Y'||option4=='y');
+	f4.close();    
+   } 
+ //***********************CLASS ROOM(CHECKOUT)**************************
+  void checkoutroom()
+	{
+		system("CLS");
+		room r;
+		char option5;
+		fstream f5;
+		f5.open("Room checkout details.txt",ios::out|ios::binary|ios::app);
+		do
+			{
+				system("CLS");
+				r.checkout();
+				f5.write((char*)&r,sizeof(r));
+				cout<<"\n\t\t\t ANY MORE CUSTOMER IS TO CHECK OUT(Y/N)"<<"\n"<<"\t\t\t";
+				cin>>option5;
+			}while(option5=='Y'||option5=='y');
+		f5.close();
+	} 
+//!!!!!!!!!!!!!!!!!!!!!!!!!FUNCTOINS TO MODIFY!!!!!!!!!!!!!!!!!!!!!!!!!! 
+//**************************CUSTOMER MODIFY*****************************
 void modifycutomer()
 	{
 		    customer c;
@@ -577,43 +614,8 @@ void modifycutomer()
             if(vari==0)
 				cout<<endl<<"\t\t\t................ RECORD NOT FOUND.............."<<endl;
 	}
-//%%%%%%%%%%%%%CLASS ROOM(BOOKING)%%%%%%%%%%%%%
- void booking()
-  {
-	system("CLS");
-	room r;
-	char option4;
-	fstream f4;
-	f4.open("Room status.txt",ios::out|ios::binary|ios::app);
-	do
-		{
-			system("CLS");
-			r.write_room();
-			f4.write((char*)&r,sizeof(r));
-			cout<<"\n\t\t\t DO YOU WANT TO ADD MORE ROOMS-(Y/N)"<<endl<<"\t\t\t";
-			cin>>option4;
-		}while(option4=='Y'||option4=='y');
-	f4.close();    
-   } 
- //&&&&&&&&&&&&&&CLASS ROOM(CHECKOUT)&&&&&&&&&&&&&&
-  void checkoutroom()
-	{
-		system("CLS");
-		room r;
-		char option5;
-		fstream f5;
-		f5.open("Room checkout details.txt",ios::out|ios::binary|ios::app);
-		do
-			{
-				system("CLS");
-				r.checkout();
-				f5.write((char*)&r,sizeof(r));
-				cout<<"\n\t\t\t ANY MORE CUSTOMER IS TO CHECK OUT(Y/N)"<<"\n"<<"\t\t\t";
-				cin>>option5;
-			}while(option5=='Y'||option5=='y');
-		f5.close();
-	} 
-//$$$$$$$$$$$$ROOM CANCELLATOIN$$$$$$$$$$$$4
+//!!!!!!!!!!!!!!!!!!!!FUCTION TO CANCEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//*************************ROOM CANCELLATOIN****************************
 void cancellation()
 	{
 		    room r;
@@ -640,8 +642,8 @@ void cancellation()
             if(var==0)
 				cout<<endl<<"\t\t\t................ROOM NOT BOOKED..............."<<endl;
 	}
-//**********ADDITONAL FUNCTIONS******************
-//&&&&&&&&RESTAURANT VIEW&&&&&&&&&&&&&&&&&
+//!!!!!!!!!!!!!!!!!!!!!!!!! FUNCTIONS TO VIEW !!!!!!!!!!!!!!!!!!!!!!!!!!
+//***********************RESTAURANT VIEW********************************
 void displayres()
     {
 		system("CLS");
@@ -655,7 +657,7 @@ void displayres()
             }
         f1.close();
     }  
- //$$$$$$$$BAR VIEW$$$$$$$$$$$$$$$$$$
+ //*****************************BAR VIEW********************************
  void displaybar()
  {
 	    system("CLS");
@@ -669,7 +671,7 @@ void displayres()
             }
         f2.close();
  }
-//@@@@@@@@@@@CUSTOMER VIEW@@@@@@@@@@@@@@
+//**************************CUSTOMER VIEW*******************************
 void displaycust()
   {
 		system("CLS");
@@ -683,7 +685,7 @@ void displaycust()
             }
         f3.close();
    } 
-//%%%%%%%%%%%ROOM VIEW%%%%%%%%%%%%%%%%%%%%%
+//*************************ROOM VIEW************************************
 void displayroom()
 	{
 		system("CLS");
@@ -697,7 +699,7 @@ void displayroom()
 		  }
 	    f4.close();
 	}
-//@@@@@@@@@@@@@ROOM CHECK OUT VIEW@@@@@@@@@@@@@@
+//***********************ROOM CHECK OUT VIEW****************************
 void displayromcheckout()
 	{
 		system("CLS");
@@ -711,7 +713,8 @@ void displayromcheckout()
 			}
 		f5.close();
 	}
-//&&&&&&&&(ADMIN)BILL CONTROL&&&&&&&&&&&&&&
+//!!!!!!!!!!!!!!!!!!!!!!FUCTIONS TO SELECT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//**********************(ADMIN)BILL CONTROL*****************************
   void bill_control()
 		{
 			system("CLS");
@@ -750,7 +753,7 @@ void displayromcheckout()
 						}
 				}while(!tem);
 	}
-//$$$$$$$$$$(ADMIN)RESTAURANT CONTROL$$$$$$$$$$$$$$$$$
+//********************(ADMIN)RESTAURANT CONTROL*************************
 	void restaurant_control()
 		{
 			system("CLS");
@@ -791,7 +794,7 @@ void displayromcheckout()
 						}
 				}while(!tmp);
 		}
-//&&&&&&&&&&&&(ADMIN)BAR CONTROL&&&&&&&&&&&&&&&&&&&&&&
+//**********************(ADMIN)BAR CONTROL******************************
 	void bar_control()
 		{
 			system("CLS");
@@ -832,7 +835,7 @@ void displayromcheckout()
 						}
 				}while(!top);
 		}
-//&&&&&&&&&&&&&&&&(ADMIN)CUSTOMER CONTROL&&&&&&&&&&&&
+//************************(ADMIN)CUSTOMER CONTROL***********************
 	void customer_control()
 		{
 			system("CLS");
@@ -873,7 +876,7 @@ void displayromcheckout()
 						}
 				}while(!tpmt);
 		}
-//$$$$$$$$$$$$(ADMIN)ROOM CONTROL$$$$$$$$$$$$$$$$$$$$
+//************************(ADMIN)ROOM CONTROL***************************
 	void room_control()
 		{
 			system("CLS");
@@ -929,7 +932,7 @@ void displayromcheckout()
 						}
 				}while(!tp);
 		}
-//&&&&&&&&&&&&&&(CLIENT) CUSTOMER CONTROL&&&&&&&&&
+//**********************(CLIENT) CUSTOMER CONTROL***********************
     void client_customer()
 		{
 			system("CLS");
@@ -959,7 +962,7 @@ void displayromcheckout()
 						}
 				}while(!cus);
 		}
-//******************ADMIN CONTROL**********************
+//******************************ADMIN CONTROL***************************
 	void adminctrl()
 		{
 			system("CLS");
@@ -1016,7 +1019,7 @@ void displayromcheckout()
 				cout<<"\n\t\t\t\t\t\t\t\t\t\t\t!!!!!!!!!!WRONG PASSWORD!!!!!!!!!!"
 					<<"\n\t\t\t\t\t\t\t\t\t\t\t!!!!!!!!!!TRY AGAIN!!!!!!!!!!!!!!!";
 		 }
-//*****************CLIENT CONTROL*************************
+//**************************CLIENT CONTROL******************************
   void clientctrl()
 		{
 				system("CLS");
@@ -1057,7 +1060,7 @@ void displayromcheckout()
 					}while(!tpi);
 					system("CLS");
 		}
-//****************************MAIN  PROGRAM***********************************
+//****************************MAIN  PROGRAM*****************************
 	int main ()
 		{
 			int opt;
